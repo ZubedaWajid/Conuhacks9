@@ -34,6 +34,21 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+  .sun-dot {
+    position: relative;
+    display: inline-block;
+}
+
+.sun-dot::after {
+    content: '☀'; /* Sun emoji */
+    font-size: 0.5em; /* Reduce the size */
+    position: absolute;
+    top: -3px; /* Move it up slightly */
+    left: -1px; /* Move it closer to the "i" */
+    color: gold; /* Keep the gold color */
+}
+  </style>
 </head>
 
 <body class="index-page">
@@ -109,7 +124,10 @@
       <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-5 justify-content-between">
           <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-            <h2><span>Welcome to </span><span class="accent">Impact</span></h2>
+            <h2>
+              <span>Welcome to </span>
+              <span class="accent">SunF<i class="sun-dot">i</i>.</span>
+            </h2>
             <p>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
             <div class="d-flex">
               <a href="#about" class="btn-get-started">Get Started</a>

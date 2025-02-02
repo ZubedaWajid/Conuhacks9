@@ -7,6 +7,7 @@ from io import StringIO
 import json
 import re
 import markdown
+import webbrowser
 
 # Configure Flask app
 app = Flask(__name__)
@@ -32,15 +33,9 @@ conversation_history = []
 
 def clean_ai_response(text):
     """Removes special characters like *, _, #, ` from AI-generated text."""
-    text = text.strip()  # Remove extra spaces/newlines
-    # text = re.sub(r'\*+', '', text)  # Remove asterisks (*)
-    # text = re.sub(r'_+', '', text)  # Remove underscores (_)
-    # text = re.sub(r'#+', '', text)  # Remove markdown headings (###)
-    # text = re.sub(r'`+', '', text)  # Remove inline code (` `)
-    # text = re.sub(r'\n+', '\n', text.strip())  # Preserve line breaks properly
-
+    text = text.strip()
     html_response = markdown.markdown(text)  # Convert Markdown to HTML
-    return html_response  # Return formatted HTML response
+    return html_response
 
 @app.route('/')
 def index():
@@ -55,14 +50,11 @@ def get_analysis():
     csv_text = df.to_string(index=False)
     prompt = f"""
     Analyze this bank transaction data and summarize spending trends. 
-    Give me a table of categories and totals for each.
-
+    Give me a formated list of categories and totals for each.
     My monthly income is 4000, and suggest how I am doing financially 
     and what improvements can be made:
-
     {csv_text}
     """
-
 
     # Generate AI response
     model = genai.GenerativeModel('gemini-1.5-flash')
@@ -76,7 +68,7 @@ def ask_question():
     user_input = data.get("message", "")
 
     # Maintain chat history
-    conversation_history.append(f"User: {user_input}")
+    conversation_history.append(f"User: {user_input} + keep it strictly related to finance and not like a chat GPT, and use as much as numbers possible to give the logic for the response you generate.")
 
     # Generate AI response
     model = genai.GenerativeModel('gemini-1.5-flash')
@@ -88,5 +80,13 @@ def ask_question():
 
     return jsonify({"response": bot_reply})
 
+# **Move this route ABOVE `if __name__ == '__main__':`**
+@app.route('/open_chat', methods=['GET'])
+def open_chat():
+    url = "http://127.0.0.1:5000/"  # Change this if your chatbot runs on a different port
+    webbrowser.open(url, new=2)  # Open in a new browser tab
+    return jsonify({"success": True, "url": url})
+
+# Start the Flask app
 if __name__ == '__main__':
     app.run(debug=True)

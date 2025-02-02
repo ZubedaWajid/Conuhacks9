@@ -52,7 +52,9 @@ def get_analysis():
     Analyze this bank transaction data and summarize spending trends. 
     Give me a formated list of categories and totals for each.
     My monthly income is 4000, and suggest how I am doing financially 
-    and what improvements can be made:
+    and what improvements can be made. Also you are the financial advisor, so do not ask give vage responses
+    Give particualr exact step for user in thier responses and do the stuff yourself, like calcualtion and all.
+    And use it to give good efficient response. you are like their secretary.:
     {csv_text}
     """
 

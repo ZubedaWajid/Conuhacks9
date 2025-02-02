@@ -1,118 +1,100 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetchAnalysis(); // Load initial AI analysis on page load
+    fetchAnalysis(); // Load AI financial analysis on page load
 });
 
-let chatStage = 0; // Controls chatbot flow
+// Global Chat State
+let chatStage = 0;
+const chatContainer = document.getElementById('chatContainer');
+const sendButton = document.getElementById('sendButton');
+const userInput = document.getElementById('userInput');
 
+// Event Listeners for Button Click & Enter Key
+sendButton.addEventListener('click', sendMessage);
+userInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+// Fetch AI Financial Analysis on Load
 function fetchAnalysis() {
     fetch("/get-analysis")
         .then(response => response.json())
         .then(data => {
-            appendMessage("🤖 Bot", data.analysis, "bot-message", true);
+            appendMessage("🤖 Bot", data.analysis, "bot", true);
             setTimeout(() => askNextQuestion(), 2000); // Delay before next question
         })
         .catch(error => {
             console.error("Error fetching analysis:", error);
-            appendMessage("🤖 Bot", "⚠️ Failed to load AI analysis.", "bot-message");
+            appendMessage("🤖 Bot", "⚠️ Failed to load AI analysis.", "bot");
         });
 }
 
+// Send Message to AI and Display Response
 async function sendMessage() {
-    let userInput = document.getElementById("userInput").value.trim();
-    if (!userInput) return; // Ignore empty input
+    let text = userInput.value.trim();
+    if (!text) return; // Ignore empty input
 
-    appendMessage("😎 You", userInput, "user-message"); // Display user input
+    appendMessage("😎 You", text, "user"); // Display user input
 
     try {
-        // Wait for fetch() to complete before proceeding
         let response = await fetch("/ask-question", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: userInput+". Make the output efficient and not too long but full of information" })
+            body: JSON.stringify({ message: text + ". Make the output efficient and not too long but full of information" })
         });
 
-        let data = await response.json(); // Wait for JSON conversion
-        appendMessage("🤖 Bot", data.response, "bot-message", true); // Display bot response
+        let data = await response.json();
+        appendMessage("🤖 Bot", data.response, "bot", true); // Display AI response
 
     } catch (error) {
         console.error("Error sending message:", error);
-        appendMessage("🤖 Bot", "❌ Oops, something went wrong!", "bot-message");
+        appendMessage("🤖 Bot", "❌ Oops, something went wrong!", "bot");
     }
 
+    // Move to Next Chat Stage
     if (chatStage === 1) {
-        // If user responded to "What are your financial goals?"
         fetchBotResponse("📅 When do you want to achieve this goal?", () => {
-            chatStage = 2; // Move to next stage
+            chatStage = 2;
         });
     } 
     if (chatStage === 2) {
-        // If user responded to "When do you want to achieve the goal?"
         fetchBotResponse("🚀 Got it! Now, I have all your financial details and goals. Ask me anything!", () => {
             chatStage = 3; // Free chat mode
         });
     }
 
-    document.getElementById("userInput").value = ""; // Clear input field
+    userInput.value = ""; // Clear input field
 }
 
-// function sendMessage() {
-//     let userInput = document.getElementById("userInput").value.trim();
-//     if (!userInput) return; // Ignore empty input
+// Append Messages to Chat Box
+function appendMessage(sender, message, className, isHTML = false) {
+    let msgDiv = document.createElement("div");
+    msgDiv.classList.add("chat-message", className);
 
-//     appendMessage("😎 You", userInput, "user-message"); // Show user's message
+    if (isHTML) {
+        msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    } else {
+        msgDiv.textContent = `${sender}: ${message}`;
+    }
 
-//     // Free chat mode (just respond, no more pre-programmed questions)
-//     fetch("/ask-question", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({ message: userInput })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         appendMessage("🤖 Bot", data.response, "bot-message");
-//     })
-//     .catch(error => {
-//         console.error("Error sending message:", error);
-//         appendMessage("🤖 Bot", "❌ Oops, something went wrong!", "bot-message");
-//     });
+    chatContainer.appendChild(msgDiv);
+    chatContainer.scrollTop = chatContainer.scrollHeight; // Auto-scroll to latest message
+}
 
-    
-
-//     document.getElementById("userInput").value = ""; // Clear input field
-// }
-
+// Fetch AI Responses in Guided Chat Mode
 function fetchBotResponse(responseText, callback) {
     setTimeout(() => {
-        appendMessage("🤖 Bot", responseText, "bot-message", true);
-        if (callback) setTimeout(callback, 2000); // Delay next question for natural feel
+        appendMessage("🤖 Bot", responseText, "bot", true);
+        if (callback) setTimeout(callback, 2000);
     }, 2000);
 }
 
+// Ask Next Question in AI Chat Flow
 function askNextQuestion() {
     if (chatStage === 0) {
         fetchBotResponse("💰 What are your financial goals?", () => {
-            chatStage += 1; // Move to next stage
+            chatStage += 1;
         });
-    }
-}
-
-function appendMessage(sender, message, className, isHTML = false) {
-    let chatbox = document.getElementById("messages");
-    let msgDiv = document.createElement("div");
-    msgDiv.className = className;
-
-    if (isHTML) {
-        msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`; // Render as HTML
-    } else {
-        msgDiv.innerText = `${sender}: ${message}`; // Plain text (for user)
-    }
-
-    chatbox.appendChild(msgDiv);
-    chatbox.scrollTop = chatbox.scrollHeight; // Auto-scroll to latest message
-}
-
-function handleKeyPress(event) {
-    if (event.key === "Enter") {
-        sendMessage();
     }
 }

@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chatbot</title>
+    <title>Sunny Session - Sunlife Chatbot</title>
+  <!-- Google Fonts: using Poppins for a modern, clean look -->
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica Neue:wght@400;600&display=swap" rel="stylesheet">
+  
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-    <div class="chat-container">
-        <div class="chat-header">AI Chatbot</div>
-        <div id="chatbox" class="chat-box">
-            <div id="messages"></div>
-        </div>
-        <div class="chat-input-area">
-            <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
-            <button onclick="sendMessage()">Send</button>
+    <header>
+        Sunny Session
+    </header>
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-message bot">
+            Hello! Welcome to Sunlife Chat. I'm Sunny, your friendly financial assistant. How can I brighten your day?
         </div>
     </div>
+          
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    
 
 </body>
 </html>

@@ -1108,6 +1108,16 @@ section,
   line-height: 40px;
 }
 
+.purecounter, .percentage-symbol {
+  color: var(--heading-color);
+  font-size: 40px;
+  display: inline;
+  font-weight: 700;
+  line-height: 40px; /* Matches text color */
+}
+
+
+
 .stats .stats-item p {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
   padding: 15px 0 0 0;

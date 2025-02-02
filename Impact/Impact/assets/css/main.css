@@ -53,10 +53,17 @@
 }
 
 .accent-background {
+<<<<<<< HEAD
   --background-color: #FFF8E0;
   --default-color: #184A58;
   --heading-color: #184A58;
   --accent-color: #ffffff;
+=======
+  --background-color: #008374;
+  --default-color: #ffffff;
+  --heading-color: #ffffff;
+  --accent-color: #ffffff; 
+>>>>>>> 9158e39 (sign in screen)
   --surface-color: #00b6a1;
   --contrast-color: #184A58;
 }
@@ -2849,3 +2856,5 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+
+

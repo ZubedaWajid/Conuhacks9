@@ -232,7 +232,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   --background-color: #008374;
-  --heading-color: #e4ce5e;
+  --heading-color: #FEBE2A;
   color: var(--default-color);
   transition: all 0.5s;
   z-index: 997;

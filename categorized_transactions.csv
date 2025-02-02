@@ -1,0 +1,69 @@
+Filter,Date,Description,Sub-description,Status,Type of Transaction,Amount,Category
+Current statement period,2025-02-01,WALMART.CA,,pending,Debit,10.32,Grocery
+,2025-01-31,GONG CHA (ST. CATHERIN,,pending,Debit,8.23,Restaurants
+,2025-01-30,CAFE CHAHAT,,pending,Debit,16.04,Restaurants
+,2025-01-30,STM LOGE ST LAURENT N101,,pending,Debit,21.25,Clothing
+,2025-01-30,LA CREMIERE - 2095       ,Montreal Qc,posted,Debit,6.04,Grocery
+,2025-01-28,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,5.47,Restaurants
+,2025-01-27,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,3.54,Restaurants
+,2025-01-27,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,4.75,Restaurants
+,2025-01-27,Subway 14586             ,Kanata On,posted,Debit,13.95,Restaurants
+,2025-01-25,DEL PIACERE RESTAURANT   ,Ottawa On,posted,Debit,27.83,Restaurants
+,2025-01-24,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,4.78,Restaurants
+,2025-01-24,NETFLIX.COM              ,844-5052993 Bc,posted,Debit,6.77,Entertainment
+,2025-01-24,EXPEDIA 73015801440407   ,Expedia.Ca On,posted,Debit,171.22,Travel
+,2025-01-22,OCT*LGP7XYG873W7KW       ,Ottawa On,posted,Debit,4.0,Miscellaneous
+,2025-01-21,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,2.43,Restaurants
+,2025-01-21,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,3.54,Restaurants
+,2025-01-21,OCT*NV9Z5MWZYWX0PL       ,Ottawa On,posted,Debit,12.0,Miscellaneous
+,2025-01-20,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,4.75,Restaurants
+,2025-01-20,OCT*NO3D6G1V1R203R       ,Ottawa On,posted,Debit,8.0,Miscellaneous
+,2025-01-19,OCT*LG9WWPRW2M5ZWK       ,Ottawa On,posted,Debit,4.0,Miscellaneous
+,2025-01-18,OCT*NDK5PM0KXZRJXJ       ,Ottawa On,posted,Debit,8.0,Miscellaneous
+,2025-01-17,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,3.54,Restaurants
+,2025-01-16,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,3.54,Restaurants
+,2025-01-16,SQ *SABAI THAI CUISINE   ,Kanata On,posted,Debit,26.39,Restaurants
+,2025-01-13,CANADIAN TIRE #457       ,Kanata On,posted,Debit,56.53,Electronics
+,2025-01-13,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,4.75,Restaurants
+,2025-01-12,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,20.79,Restaurants
+,2025-01-11,SCOTIA CREDIT CARD PROTEC,Tion Tax,posted,Debit,1.3,Finance
+,2025-01-11,SCOTIA CREDIT CARD PROTEC,Tion,posted,Debit,16.19,Finance
+,2025-01-10,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,9.56,Restaurants
+,2025-01-09,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,18.3,Restaurants
+,2025-01-09,SQ *SABAI THAI CUISINE   ,Ottawa On,posted,Debit,25.95,Restaurants
+,2025-01-08,PRESTO MOBL              ,Toronto On,posted,Debit,20.0,Miscellaneous
+,2025-01-08,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,8.71,Restaurants
+,2025-01-08,OCT*NQ67ZMYKZJ7YQ7       ,Ottawa On,posted,Debit,8.0,Miscellaneous
+,2025-01-07,HYDERABAD BIRYANI POINT  ,Ottawa On,posted,Debit,10.99,Restaurants
+,2025-01-06,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,6.12,Restaurants
+,2025-01-06,OCT*LWGR02K53JWWXW       ,Ottawa On,posted,Debit,8.0,Miscellaneous
+,2025-01-05,WAL-MART SUPERCENTER#3066,Ottawa On,posted,Debit,23.18,Grocery
+,2025-01-04,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,26.28,Restaurants
+,2025-01-03,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,57.44,Restaurants
+,2025-01-01,PAYMENT FROM - *****13*17,84,posted,Credit,-975.83,Finance
+,2025-01-01,WALMART.CA               ,Mississauga On,posted,Debit,10.32,Grocery
+,2024-12-29,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,54.58,Restaurants
+,2024-12-29,OCT*E5Z7VK012R86QG       ,Ottawa On,posted,Debit,3.8,Miscellaneous
+,2024-12-28,THALI BY COCONUT LAGOON  ,Ottawa On,posted,Debit,31.05,Restaurants
+,2024-12-28,Amazon.ca Prime Member   ,Amazon.Ca/Pribc,posted,Credit,-1.9,Electronics
+,2024-12-28,Amazon.ca Prime Member   ,Amazon.Ca/Pribc,posted,Debit,55.37,Electronics
+,2024-12-27,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,18.8,Restaurants
+,2024-12-25,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,20.79,Restaurants
+,2024-12-24,NETFLIX.COM              ,844-5052993 Bc,posted,Debit,6.77,Entertainment
+,2024-12-24,PAYMENT FROM - *****13*17,84,posted,Credit,-800.0,Finance
+,2024-12-23,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,26.78,Restaurants
+,2024-12-22,TIM HORTONS #1440        ,Nepean On,posted,Debit,4.66,Restaurants
+,2024-12-21,WAL-MART SUPERCENTER#3066,Ottawa On,posted,Debit,19.52,Grocery
+,2024-12-21,WALMART.CA               ,Mississauga On,posted,Debit,48.61,Grocery
+,2024-12-21,PRESOTEA BAYSHORE        ,Ottawa On,posted,Debit,8.99,Restaurants
+,2024-12-21,RED SWAN PIZZA           ,Kanata On,posted,Debit,1.75,Restaurants
+,2024-12-20,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,20.29,Restaurants
+,2024-12-19,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,6.12,Restaurants
+,2024-12-19,UBER* EATS               ,Toronto On,posted,Debit,26.28,Restaurants
+,2024-12-17,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,3.54,Restaurants
+,2024-12-17,UBER* EATS               ,Toronto On,posted,Debit,18.3,Restaurants
+,2024-12-16,BROOKSTREET F & B        ,Kanata On,posted,Debit,30.5,Restaurants
+,2024-12-16,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,3.54,Restaurants
+,2024-12-14,WALMART.CA               ,Mississauga On,posted,Debit,42.81,Grocery
+,2024-12-14,UBER CANADA/UBEREATS     ,Toronto On,posted,Debit,28.14,Restaurants
+,2024-12-13,EXCELSO-ERICSSON OTTAWA  ,Kanata On,posted,Debit,5.4,Restaurants
